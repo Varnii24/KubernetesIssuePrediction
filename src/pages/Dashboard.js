@@ -12,16 +12,26 @@ const Dashboard = () => {
     healthyNodes: 12,
     issuesDetected: 3,
     pendingFixes: 5,
+    anomalies: 0, // 🔥 New state for anomalies
   });
 
-  // 🎯 Simulated Data Fetching (Auto-updating Stats)
+  // 🎯 Simulated Data Fetching (Auto-updating Stats & Anomalies)
   useEffect(() => {
     const interval = setInterval(() => {
-      setStats((prevStats) => ({
-        healthyNodes: Math.max(prevStats.healthyNodes - Math.floor(Math.random() * 2), 8),
-        issuesDetected: prevStats.issuesDetected + Math.floor(Math.random() * 2),
-        pendingFixes: prevStats.pendingFixes + Math.floor(Math.random() * 1),
-      }));
+      setStats((prevStats) => {
+        const newIssues = prevStats.issuesDetected + Math.floor(Math.random() * 3);
+        const newPendingFixes = prevStats.pendingFixes + Math.floor(Math.random() * 2);
+
+        // 🔥 Anomaly Detection: If issues spike by 4+ in a short time, mark as anomaly
+        const anomalyDetected = newIssues - prevStats.issuesDetected >= 4;
+
+        return {
+          healthyNodes: Math.max(prevStats.healthyNodes - Math.floor(Math.random() * 2), 8),
+          issuesDetected: newIssues,
+          pendingFixes: newPendingFixes,
+          anomalies: anomalyDetected ? prevStats.anomalies + 1 : prevStats.anomalies, // Update anomalies
+        };
+      });
     }, 3000);
 
     return () => clearInterval(interval);
@@ -86,6 +96,10 @@ const Dashboard = () => {
         <div className="card pending">
           <h3>🔄 Pending Fixes</h3>
           <p>{stats.pendingFixes}</p>
+        </div>
+        <div className="card anomalies">
+          <h3>🚨 Anomalies</h3>
+          <p>{stats.anomalies}</p>
         </div>
       </div>
 

@@ -12,23 +12,46 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="contact-container"
       >
-        <h1>📞 Contact Us</h1>
+      <div class="contact-page">
+        <h2 class="heading">📞 Contact Us</h2>
         <p>
           Got questions or feedback? We'd love to hear from you! Reach out to us through any of the channels below.
         </p>
 
-        <h2>📬 Email</h2>
-        <p>✉️ support@varnihack.com</p>
+        <h2 class="heading">📬 Email</h2>
+        <p>✉ support@varnihack.com</p>
 
-        <h2>📍 Address</h2>
-        <p>🏢 VarniHack HQ, Tech Park, Bangalore, India</p>
+        <div class="failure-container">
+        <h2 class="heading">Report a Failure</h2>
+        <form>
+            <div class="form-group">
+                <label for="clusterName">Cluster Name:</label>
+                <input type="text" id="clusterName" placeholder="Enter Cluster Name" required></input>
+            </div>
+            <div class="form-group">
+                <label for="failureType">Failure Type:</label>
+                <select id="failureType" required>
+                    <option value="" disabled selected>Select Failure Type</option>
+                    <option value="podcrash">Pod Crash</option>
+                    <option value="resourceexhaustion">Resource Exhaustion</option>
+                    <option value="networkissue">Network Issue</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="severity">Severity:</label>
+                <select id="severity" required>
+                    <option value="" disabled selected>Select Severity</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
 
-        <h2>📲 Social Media</h2>
-        <ul>
-          <li>🐦 Twitter: <a href="https://twitter.com/varnihack" target="_blank" rel="noopener noreferrer">@VarniHack</a></li>
-          <li>📘 Facebook: <a href="https://facebook.com/varnihack" target="_blank" rel="noopener noreferrer">VarniHack</a></li>
-          <li>💼 LinkedIn: <a href="https://linkedin.com/company/varnihack" target="_blank" rel="noopener noreferrer">VarniHack</a></li>
-        </ul>
       </motion.div>
     </PageWrapper>
   );

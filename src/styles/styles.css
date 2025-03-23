@@ -417,3 +417,185 @@ body {
 .btn:hover {
   background-color: #0056b3;
 }
+.anomalies-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.anomalies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.anomalies-table th, .anomalies-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.severity-high { background-color: #c62209; }
+.severity-medium { background-color: #c59e11; }
+.severity-low { background-color: #09ce09; }
+.issues-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  max-width: 800px;
+}
+/* Match Issues with Anomalies & Dashboard */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.no-issues {
+  font-size: 1.2em;
+  color: #4caf50;
+  text-align: center;
+}
+
+/* Table Formatting */
+.table-container {
+  overflow-x: auto;
+}
+
+.issues-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.issues-table th, .issues-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.issues-table th {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+
+/* Severity-Based Row Styling */
+.severity-high {
+  background: #ffdddd;
+}
+
+.severity-critical {
+  background: #ff5c5c;
+  color: white;
+  font-weight: bold;
+}
+
+/* Style for the contact container */
+.contact-container {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 20px;
+  max-width: 600px; 
+  margin: auto; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  height: 100vh; 
+}
+
+/* Style for headings */
+.heading {
+  font-size: 1.5rem; 
+  margin: 20px 0; 
+}
+
+/* Style for form elements */
+.form-group {
+  margin-bottom: 15px; 
+}
+
+/* Style for input and select elements */
+input[type="text"],
+select {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+/* Style for the submit button */
+button {
+  padding: 10px 15px; 
+  background-color: #2D3B55; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 1rem; 
+}
+
+button:hover {
+  background-color: #1A1F30; 
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000; 
+}
+
+/* Popup Container */
+.popup {
+  background: white;
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  width: 300px;
+}
+
+/* Input Fields */
+.popup input[type="password"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+/* Popup Buttons */
+.popup-buttons {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.popup-buttons .btn {
+  padding: 10px 15px; 
+  background-color: #2D3B55; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.popup-buttons .btn.cancel {
+  background-color: #ccc; 
+}
+
+.popup-buttons .btn:hover {
+  background-color: #1A1F30; 
+}
